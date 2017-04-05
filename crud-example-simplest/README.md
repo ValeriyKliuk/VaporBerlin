@@ -42,7 +42,10 @@ From this <br>
 ![From](tutorial/images/Build_and_Run_1.png)
 <br> To this <br>
 ![To](tutorial/images/Build_and_Run_2.png)
+### 5. Open in Browser
+#### <b>Application:</b> Your favorite browser
+Call `127.0.0.1:8989/` or `127.0.0.1:8989/user`
 
-### 5. Last but not least!
+### 6. Additional
 ##### <b>Directory:</b> crud-example-simplest/Config
 Add the `secrets` directory to `.gitignore` if you are using git :)
