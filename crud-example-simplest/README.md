@@ -1,6 +1,16 @@
-# CRUD Example
-#### REQUIREMENT: You have PostgreSQL installed on your mac. If not here is how to: [Link is coming soon...]()
+# CRUD Example on a User with PostgreSQL
 ## Setup
+### 0. Install PostgreSQL via Homebrew
+```bash
+# install the binary
+$ brew install postgresql
+
+# init it
+$ initdb /usr/local/var/postgres
+
+# start the postgres server
+$ postgres -D /usr/local/var/postgres
+```
 ### 1. Generate xcode project and open it
 ##### <b>Directory:</b> crud-example-simplest/
 Execute in your command line
