@@ -33,9 +33,7 @@ Change my user `martinlasek` to yours and choose a database name
 ##### <b>Directory:</b> <i>doesn't matter</i>
 Execute in your command line
 ```bash
-$ psql
-$ CREATE DATABASE wisheddatabasename;
-$ \q
+$ createdb wisheddatabasename;
 ```
 ### 4. Build and Run
 ##### <b>Application:</b> Xcode
@@ -44,3 +42,7 @@ From this <br>
 ![From](tutorial/images/Build_and_Run_1.png)
 <br> To this <br>
 ![To](tutorial/images/Build_and_Run_2.png)
+
+### 5. Last but not least!
+##### <b>Directory:</b> crud-example-simplest/Config
+Add the `secrets` directory to `.gitignore` if you are using git :)
