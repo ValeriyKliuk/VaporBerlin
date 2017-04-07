@@ -57,7 +57,7 @@ Make sure before you hit the ► button, that you selected <b> App </b> to the r
 
 ## 5. Open in Browser
 ##### <b>Application:</b> Your favorite browser
-Call `127.0.0.1:8989/` or `127.0.0.1:8989/user`
+Call `127.0.0.1:8001/` or `127.0.0.1:8001/user`
 
 ## 6. Additional
 ##### <b>Directory:</b> crud-example-simplest/Config

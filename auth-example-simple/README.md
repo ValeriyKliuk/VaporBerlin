@@ -52,7 +52,7 @@ Make sure before you hit the ► button, that you selected <b> App </b> to the r
 ![To](../images/Build_and_Run_2.png)
 ## 5. Open in Browser
 ##### <b>Application:</b> Your favorite browser
-Call `127.0.0.1:8989/` or `127.0.0.1:8989/user`
+Call `127.0.0.1:8002/` or `127.0.0.1:8002/user`
 
 ## 6. Additional
 ##### <b>Directory:</b> auth-example-simple/Config
