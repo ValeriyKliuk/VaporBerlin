@@ -1,4 +1,13 @@
 # CRUD Example on a User with PostgreSQL
+
+System Requirements | Version |  | Used Packages | Version |
+------------ | ------------- | ------------- | ------------- | ------------- |
+macOS | Sierra |  | vapor | 1.5.x |
+swift | 3.1 |  | postgresql-provider | 1.1 |
+vapor-toolbox | 1.0.8 |
+
+:grey_exclamation: tested and assured to work with above versions
+
 ## 0. Install PostgreSQL via Homebrew
 ```bash
 # install the binary
