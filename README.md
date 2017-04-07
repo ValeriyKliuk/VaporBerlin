@@ -6,7 +6,7 @@
 3. LEAF (Extend, Export, Embed, Import)
 
 ### Troubleshooting
-Always try ```vapor clean``` and then ```vapor build``` and finally ```vapor run```
+Always try ```vapor clean``` and then ```vapor build``` and finally ```vapor run``` :sparkles:
 
 ### Need Help?
 Join the awesome [Vapor-Community](http://vapor.team/) where everyone is just keen to help out! You can ask <i>anything</i>!
