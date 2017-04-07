@@ -1,15 +1,57 @@
-# Basic Template
+# AUTH Example with a User and PostgreSQL
+System Requirements | Version |  | Used Packages | Version |
+------------ | ------------- | ------------- | ------------- | ------------- |
+macOS | Sierra |  | vapor | 1.5.x |
+swift | 3.1 |  | postgresql-provider | 1.1 |
+vapor-toolbox | 1.0.8 |
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
+<i>Only tested and assured to work with above versions </i>
+## 0. Install PostgreSQL via Homebrew
+```bash
+# install the binary
+$ brew install postgresql
 
-## 📖 Documentation
+# init it
+$ initdb /usr/local/var/postgres
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+# start the postgres server
+$ postgres -D /usr/local/var/postgres
+```
+## 1. Generate xcode project and open it
+##### <b>Directory:</b> auth-example-simple/
+Execute in your command line
+```bash
+$ vapor xcode -y
+```
+## 2. Set your database configuration
+##### <b>File:</b> auth-example-simple/Config/secrets/postgresql.json
+Change my user `martinlasek` to yours and choose a database name
+```JSON
+{
+  "host": "127.0.0.1",
+  "user": "martinlasek",
+  "password": "",
+  "database": "wisheddatabasename",
+  "port": 5432
+}
+```
+## 3. Create the database
+##### <b>Directory:</b> <i>doesn't matter</i>
+Execute in your command line
+```bash
+$ createdb wisheddatabasename;
+```
+## 4. Build and Run
+##### <b>Application:</b> Xcode
+Make sure before you hit the ► button, that you selected <b> App </b> to the right of the button. <br>
+<i>From this</i> <br>
+![From](../images/Build_and_Run_1.png)
+<br> <i>To this</i> <br>
+![To](../images/Build_and_Run_2.png)
+## 5. Open in Browser
+##### <b>Application:</b> Your favorite browser
+Call `127.0.0.1:8989/` or `127.0.0.1:8989/user`
 
-## 💧 Community
-
-Join the welcoming community of fellow Vapor developers in [slack](http://vapor.team).
-
-## 🔧 Compatibility
-
-This package has been tested on macOS and Ubuntu.
+## 6. Additional
+##### <b>Directory:</b> auth-example-simple/Config
+Add the `secrets` directory to `.gitignore` if you are using git :)
