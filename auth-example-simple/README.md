@@ -1,11 +1,13 @@
 # AUTH Example with a User and PostgreSQL
+
 System Requirements | Version |  | Used Packages | Version |
 ------------ | ------------- | ------------- | ------------- | ------------- |
 macOS | Sierra |  | vapor | 1.5.x |
 swift | 3.1 |  | postgresql-provider | 1.1 |
 vapor-toolbox | 1.0.8 |
 
-<i>Only tested and assured to work with above versions </i>
+:grey_exclamation: tested and assured to work with above versions
+
 ## 0. Install PostgreSQL via Homebrew
 ```bash
 # install the binary
