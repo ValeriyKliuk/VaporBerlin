@@ -1,23 +1,66 @@
-<p align="center">
-    <img src="https://cloud.githubusercontent.com/assets/1342803/24797159/52fb0d88-1b90-11e7-85a5-359fff0496a4.png" width="320" alt="MySQL">
-    <br>
-    <br>
-    <a href="http://beta.docs.vapor.codes/getting-started/hello-world/">
-        <img src="http://img.shields.io/badge/read_the-docs-92A8D1.svg" alt="Documentation">
-    </a>
-    <a href="http://vapor.team">
-        <img src="http://vapor.team/badge.svg" alt="Slack Team">
-    </a>
-    <a href="LICENSE">
-        <img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT License">
-    </a>
-    <a href="https://circleci.com/gh/vapor/mysql">
-        <img src="https://circleci.com/gh/vapor/mysql.svg?style=shield" alt="Continuous Integration">
-    </a>
-    <a href="https://travis-ci.org/vapor/api-template">
-    	<img src="https://travis-ci.org/vapor/api-template.svg?branch=master" alt="Build Status">
-    </a>
-    <a href="https://swift.org">
-        <img src="http://img.shields.io/badge/swift-3.1-brightgreen.svg" alt="Swift 3.1">
-    </a>
-</center>
+# CRUD - Vapor and PostgreSQL
+
+![From](../images/crud.gif)
+## Environment
+System Requirements | Version |  | Used Packages | Version |
+------------ | ------------- | ------------- | ------------- | ------------- |
+macOS | Sierra |  | vapor | 2.0.2 |
+swift | 3.1 |  | postgresql-provider | 2.x |
+vapor-toolbox | 2.0.3 |
+
+<center>:grey_exclamation: tested and assured to work with above versions :grey_exclamation:</center>
+
+## 0. Install PostgreSQL via Homebrew
+```bash
+# install the binary
+$ brew install postgresql
+
+# init it
+$ initdb /usr/local/var/postgres
+
+# start the postgres server
+$ postgres -D /usr/local/var/postgres
+```
+
+## 1. Generate xcode project and open it
+##### <b>Directory:</b> crud-example/
+Execute in your command line
+```bash
+$ vapor xcode -y
+```
+
+## 2. Set your database configuration
+##### <b>File:</b> crud-example/Config/secrets/postgresql.json
+Change my user `martinlasek` to yours and choose a database name
+```JSON
+{
+  "host": "127.0.0.1",
+  "user": "martinlasek",
+  "password": "",
+  "database": "wisheddatabasename",
+  "port": 5432
+}
+```
+
+## 3. Create the database
+##### <b>Directory:</b> <i>doesn't matter</i>
+Execute in your command line
+```bash
+$ createdb wisheddatabasename;
+```
+
+## 4. Build and Run
+##### <b>Application:</b> Xcode
+Make sure before you hit the ► button, that you selected <b> App </b> to the right of the button. <br>
+<i>From this</i> <br>
+![From](../images/Build_and_Run_1.png)
+<br> <i>To this</i> <br>
+![To](../images/Build_and_Run_2.png)
+
+## 5. Open in Browser
+##### <b>Application:</b> Your favorite browser
+Call `127.0.0.1:8001/` or `127.0.0.1:8001/read`
+
+## 6. Additional
+##### <b>Directory:</b> crud-example/Config
+Add the `secrets` directory to `.gitignore` if you are using git :)

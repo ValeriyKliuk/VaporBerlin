@@ -10,6 +10,10 @@ final class Routes: RouteCollection {
   
   func build(_ builder: RouteBuilder) throws {
     
+    builder.get { req in
+      return try self.view.make("base", ["success": true, "message": "Welcome to my CRUD Example! Feedback is always welcomed :)!"])
+    }
+    
     // GET read
     // returns view with table of all users
     builder.get("/read") { req in
