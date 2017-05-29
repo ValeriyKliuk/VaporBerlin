@@ -1,4 +1,4 @@
-# A perfect place to get started with Vapor!
+# A perfect place to get started with Vapor 2!
 ### Tutorials and Templates
 
 1. [CRUD (Create, Read, Update, Delete)](/crud-example)

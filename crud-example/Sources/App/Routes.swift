@@ -12,7 +12,7 @@ final class Routes: RouteCollection {
     
     builder.get("/") { req in
       
-      return try self.view.make("base")
+      return try self.view.make("base", ["read": "true"])
     }
 
     builder.get("plaintext") { req in

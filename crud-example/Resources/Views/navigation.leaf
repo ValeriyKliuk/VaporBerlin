@@ -1,26 +1,23 @@
 <div class="row">
   <br>
-  <div class="well">
-    <div class="col-xs-3">
-      <a href="/create" class="btn-block text-center">
-        <b>C</b>REATE
-      </a>
-    </div>
-    <div class="col-xs-3">
-      <a href="/read" class="btn-block text-center">
-        <b>R</b>EAD
-      </a>
-    </div>
-    <div class="col-xs-3">
-      <a href="/update" class="btn-block text-center">
-        <b>U</b>PDATE
-      </a>
-    </div>
-    <div class="col-xs-3">
-      <a href="/delete" class="btn-block text-center">
-        <b>D</b>ELETE
-      </a>
-    </div>
-    <br>
+  <div class="col-xs-3 text-center">
+    <a href="/create" class="btn btn-block #if(create) {btn-primary} ##else() {btn-default} ">
+      <b>C</b>REATE
+    </a>
+  </div>
+  <div class="col-xs-3 text-center">
+    <a href="/read" class="btn btn-block #if(read) {btn-primary} ##else() {btn-default}">
+      <b>R</b>EAD
+    </a>
+  </div>
+  <div class="col-xs-3 text-center">
+    <a href="/update" class="btn btn-block #if(update) {btn-primary} ##else() {btn-default}">
+      <b>U</b>PDATE
+    </a>
+  </div>
+  <div class="col-xs-3 text-center">
+    <a href="/delete" class="btn btn-block #if(delete) {btn-primary} ##else() {btn-default}">
+      <b>D</b>ELETE
+    </a>
   </div>
 </div>
