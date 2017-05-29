@@ -3,6 +3,7 @@
 #export("content") {
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <!-- we use method="post" for creating data -->
       <form action="/create" method="post">
           <div class="form-group">
             <label for="username">Username</label>

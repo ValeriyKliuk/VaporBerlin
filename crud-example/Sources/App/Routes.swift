@@ -35,23 +35,29 @@ final class Routes: RouteCollection {
       
       guard let username = req.data["username"]?.string else {
         
-        return try self.view.make("create", ["create": "true", "error": "username was missing"])
+        return try self.view.make("create", ["create": "true", "error": true, "message": "username was missing"])
       }
       
       guard let firstname = req.data["firstname"]?.string else {
         
-        return try self.view.make("create", ["create": "true", "error": "firstname was missing"])
+        return try self.view.make("create", ["create": "true", "error": true, "message": "firstname was missing"])
       }
       
       guard let age = req.data["age"]?.int else {
         
-        return try self.view.make("create", ["create": "true", "error": "age was missing or not a number"])
+        return try self.view.make("create", ["create": "true", "error": true, "message": "age was missing or not a number"])
       }
       
       let user = User(username: username, firstname: firstname, age: age)
       try user.save()
       
-      return try self.view.make("create", ["create": "true", "succes": "user was successfully created."])
+      return try self.view.make("create",
+        [
+          "create": "true",
+          "success": true,
+          "message": "user was successfully created."
+        ]
+      )
     }
   }
 }

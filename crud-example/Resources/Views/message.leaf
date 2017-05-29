@@ -1,0 +1,13 @@
+#if(success) {
+  <div class="alert alert-success">
+    #(message)
+  </div>
+  <hr>
+}
+
+#if(error) {
+  <div class="alert alert-danger">
+    #(message)
+  </div>
+  <hr>
+}
