@@ -1,0 +1,31 @@
+#extend("base")
+
+#export("content") {
+  <div class="row">
+    <div class="col-xs-12 col-sm-3"><b>Username</b></div>
+    <div class="col-xs-12 col-sm-3"><b>Firstname</b></div>
+    <div class="col-xs-12 col-sm-3"><b>Age</b></div>
+    <div class="col-xs-12 col-sm-3"><b>Action</b></div>
+  </div>
+  <br>
+  #loop(userlist, "user") {
+    <div class="row">
+      <form action="/delete" method="POST">
+        <input type="text" name="id" value="#(user.id)" class="hidden">
+        <div class="col-xs-12 col-sm-3">
+          #(user.username)
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          #(user.firstname)
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          #(user.age)
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <button type="submit" class="btn btn-block btn-danger">Delete</button>
+        </div>
+      </form>
+    </div>
+    <br>
+  }
+}
