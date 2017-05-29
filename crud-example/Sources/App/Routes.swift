@@ -10,19 +10,48 @@ final class Routes: RouteCollection {
   
   func build(_ builder: RouteBuilder) throws {
     
-    builder.get("/") { req in
+    // returns view with table of all users
+    builder.get("/read") { req in
       
-      return try self.view.make("base", ["read": "true"])
+      let userList = try User.makeQuery().all()
+      
+      if userList.isEmpty {
+        
+        return try self.view.make("read", ["read": "true", "error": "There exist no user yet. Go create some!"])
+      }
+      
+      // render read.leaf and pass read as true and userlist
+      return try self.view.make("read", ["read": "true", "userlist": userList])
+    }
+    
+    // returns form to create a user
+    builder.get("/create") { req in
+      
+      return try self.view.make("create", ["create": "true"])
     }
 
-    builder.get("plaintext") { req in
-      return "Hello, world!"
-    }
+    // POST is the right method to create data
+    builder.post("/create") { req in
+      
+      guard let username = req.data["username"]?.string else {
         
-    // response to requests to /info domain
-    // with a description of the request
-    builder.get("info") { req in
-      return req.description
+        return try self.view.make("create", ["create": "true", "error": "username was missing"])
+      }
+      
+      guard let firstname = req.data["firstname"]?.string else {
+        
+        return try self.view.make("create", ["create": "true", "error": "firstname was missing"])
+      }
+      
+      guard let age = req.data["age"]?.int else {
+        
+        return try self.view.make("create", ["create": "true", "error": "age was missing or not a number"])
+      }
+      
+      let user = User(username: username, firstname: firstname, age: age)
+      try user.save()
+      
+      return try self.view.make("create", ["create": "true", "succes": "user was successfully created."])
     }
   }
 }

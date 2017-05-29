@@ -1,0 +1,26 @@
+#extend("base")
+
+#export("content") {
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Firstname</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          #loop(userlist, "user") {
+              <tr>
+                <td>#(user.username)</td>
+                <td>#(user.firstname)</td>
+                <td>#(user.age)</td>
+              </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+}

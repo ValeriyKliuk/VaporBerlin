@@ -7,6 +7,7 @@
   <body>
     <div class="container">
       #embed("navigation")
+      <hr>
       #import("content")
     </div>
   </body>

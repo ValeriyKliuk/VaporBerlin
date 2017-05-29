@@ -21,7 +21,7 @@ final class User: Model {
   // database row
   init(row: Row) throws {
     
-    username = try row.get("userName")
+    username = try row.get("username")
     firstname = try row.get("firstname")
     age = try row.get("age")
   }
@@ -88,8 +88,19 @@ extension User: JSONConvertible {
   }
 }
 
-// MARK: HTTP
+// needed so we can pass it to the view
+extension User: NodeConvertible {
 
-// This allows Post models to be returned
+  func makeNode(in context: Context?) throws -> Node {
+    return try Node(node: [
+      "username": username,
+      "firstname": firstname,
+      "age": age
+      ])
+  }
+}
+
+// MARK: HTTP
+// This allows User models to be returned
 // directly in route closures
 extension User: ResponseRepresentable { }
