@@ -16,17 +16,14 @@ final class Routes: RouteCollection {
       let userList = try User.makeQuery().all()
       
       if userList.isEmpty {
-        
         return try self.view.make("read", ["read": "true", "error": "There exist no user yet. Go create some!"])
       }
       
-      // render read.leaf and pass read as true and userlist
       return try self.view.make("read", ["read": "true", "userlist": userList])
     }
     
-    // returns form to create a user
+    // returns view with form to create a user
     builder.get("/create") { req in
-      
       return try self.view.make("create", ["create": "true"])
     }
 
@@ -34,18 +31,15 @@ final class Routes: RouteCollection {
     builder.post("/create") { req in
       
       guard let username = req.data["username"]?.string else {
-        
-        return try self.view.make("create", ["create": "true", "error": true, "message": "username was missing"])
+        return try self.view.make("create", ["create": "true", "error": true, "message": "Username was missing"])
       }
       
       guard let firstname = req.data["firstname"]?.string else {
-        
-        return try self.view.make("create", ["create": "true", "error": true, "message": "firstname was missing"])
+        return try self.view.make("create", ["create": "true", "error": true, "message": "Firstname was missing"])
       }
       
       guard let age = req.data["age"]?.int else {
-        
-        return try self.view.make("create", ["create": "true", "error": true, "message": "age was missing or not a number"])
+        return try self.view.make("create", ["create": "true", "error": true, "message": "Age was missing or not a number"])
       }
       
       let user = User(username: username, firstname: firstname, age: age)
@@ -55,9 +49,40 @@ final class Routes: RouteCollection {
         [
           "create": "true",
           "success": true,
-          "message": "user was successfully created."
+          "message": "User was successfully created."
         ]
       )
     }
+    
+    // return view with table of user ready to update
+    builder.get("/update") { req in
+      
+      let userList = try User.makeQuery().all()
+      
+      if userList.isEmpty {
+        return try self.view.make("update", ["update": "true", "error": "There exist no user yet. Go create some!"])
+      }
+      
+      // render read.leaf and pass read as true and userlist
+      return try self.view.make("update", ["update": "true", "userlist": userList])
+    }
+    
+    // PUT is the right method to update data
+    /*builder.put("/update") { req in
+      
+      let userList = try User.makeQuery().all()
+      
+      if userList.isEmpty {
+        return try self.view.make("update", ["update": "true", "error": "There exist no user yet. Go create some!"])
+      }
+      
+      guard let userId = req.data["id"]?.int else {
+        return try self.view.make("update", ["update": "true", "userlist": userList, "error": true, "message": "id is missing"])
+      }
+      
+      guard let username = req.data["username"]?.string else {
+        return try self.view.make("update", ["update": "true", "userlist": userList, "error": true, "message": "username is missing"])
+      }
+    }*/
   }
 }
