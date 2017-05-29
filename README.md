@@ -1,8 +1,8 @@
 # A perfect place to get started with Vapor!
 ### Tutorials and Templates
 
-1. [CRUD (Create, Read, Update, Delete)](/crud-example-simplest)
-2. [AUTH (Authorize and Authenticate)](/auth-example-simple)
+1. [CRUD (Create, Read, Update, Delete)](/crud-example)
+2. AUTH (Authorize and Authenticate)
 3. LEAF (Extend, Export, Embed, Import)
 
 ### Troubleshooting
