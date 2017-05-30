@@ -51,7 +51,7 @@ $ createdb wisheddatabasename;
 
 ## 4. Build and Run
 ##### <b>Application:</b> Xcode
-Make sure before you hit the ► button, that you selected <b> App </b> to the right of the button. <br>
+Make sure before you hit the ► button, that you selected <b> Run </b> Scheme to the right of the button. <br>
 <i>From this</i> <br>
 ![From](../images/Build_and_Run_1.png)
 <br> <i>To this</i> <br>
