@@ -2,11 +2,13 @@
 ### Tutorials and Templates
 
 1. [CRUD (Create, Read, Update, Delete)](/crud-example)
-2. AUTH (Authorize and Authenticate)
-3. VALIDATION (Email and Username etc.)
-4. TESTING (macOS and Linux)
-5. SOCKETS (Chat)
-6. OPEN FOR SUGGESTIONS :)
+2. LEAF (Templating)
+3. AUTH (Authorize and Authenticate)
+4. VALIDATION (Email and Username etc.)
+5. TESTING (macOS and Linux)
+6. EMAIL
+7. SOCKETS (Chat)
+8. OPEN FOR SUGGESTIONS :)
 
 ### Troubleshooting
 • Did you add a new dependency? Run ```vapor fetch``` and then ```vapor xcode -y```
