@@ -4,7 +4,7 @@
 ## Environment
 System Requirements | Version |  | Used Packages | Version |
 ------------ | ------------- | ------------- | ------------- | ------------- |
-macOS | Sierra |  | vapor | 2.0.2 |
+macOS | Sierra |  | vapor | 2.0.x |
 swift | 3.1 |  | postgresql-provider | 2.x |
 vapor-toolbox | 2.0.3 |
 
