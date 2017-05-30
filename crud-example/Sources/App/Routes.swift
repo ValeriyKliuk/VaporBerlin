@@ -18,10 +18,7 @@ final class Routes: RouteCollection {
     // returns view with table of all users
     builder.get("/read") { req in
       
-      // I use `reversed()` because the list somehow
-      // sorts the latest edit to the bottom
-      // explicit type declaration needed due to `reversed()`
-      let userList: [User] = try User.makeQuery().all().reversed()
+      let userList: [User] = try User.makeQuery().all()
       
       if userList.isEmpty {
         return try self.view.make("read", ["read": "true", "error": "There exist no user yet. Go create some!"])
@@ -68,10 +65,7 @@ final class Routes: RouteCollection {
     // returns view with table of user ready to update
     builder.get("/update") { req in
       
-      // I use `reversed()` because the list somehow
-      // sorts the latest edit to the bottom
-      // explicit type declaration needed due to `reversed()`
-      let userList: [User] = try User.makeQuery().all().reversed()
+      let userList = try User.makeQuery().all()
       
       if userList.isEmpty {
         return try self.view.make("update", ["update": "true", "error": "There exist no user yet. Go create some!"])
@@ -83,10 +77,7 @@ final class Routes: RouteCollection {
     // POST update
     builder.post("/update") { req in
       
-      // I use `reversed()` because the list somehow
-      // sorts the latest edit to the bottom
-      // explicit type declaration needed due to `reversed()`
-      var userList: [User] = try User.makeQuery().all().reversed()
+      var userList = try User.makeQuery().all()
       
       if userList.isEmpty {
         return try self.view.make("update", ["update": "true", "error": "There exist no user yet. Go create some!"])
@@ -117,34 +108,25 @@ final class Routes: RouteCollection {
       user.age = age
       try user.save()
       
-      // I use reversed because the list somehow
-      // sorts the latest edit to the bottom
-      userList = try User.makeQuery().all().reversed()
+      userList = try User.makeQuery().all()
       
       return try self.view.make("update", ["update": "true", "userlist": userList, "success": true, "message": "User was susccessfully updated"])
     }
     
     builder.get("delete") { req in
       
-      // I use `reversed()` because the list somehow
-      // sorts the latest edit to the bottom
-      // explicit type declaration needed due to `reversed()`
-      let userList: [User] = try User.makeQuery().all().reversed()
+      let userList = try User.makeQuery().all()
       
       if userList.isEmpty {
         return try self.view.make("update", ["delete": "true", "error": "There exist no user yet. Go create some!"])
       }
       
-      // render read.leaf and pass read as true and userlist
       return try self.view.make("delete", ["delete": "true", "userlist": userList])
     }
     
     builder.post("delete") { req in
       
-      // I use `reversed()` because the list somehow
-      // sorts the latest edit to the bottom
-      // explicit type declaration needed due to `reversed()`
-      var userList: [User] = try User.makeQuery().all().reversed()
+      var userList = try User.makeQuery().all()
       
       guard let id = req.data["id"]?.int else {
         return try self.view.make("delete", ["delete": "true", "userlist": userList, "error": true, "message": "id is missing"])
@@ -155,9 +137,9 @@ final class Routes: RouteCollection {
       }
       
       try user.delete()
-      userList = try User.makeQuery().all().reversed()
+      userList = try User.makeQuery().all()
       
-      return try self.view.make("delete", ["delete": "true", "userlist": userList, "success": true, "message": "User was susccessfully deleted"])
+      return try self.view.make("delete", ["delete": "true", "userlist": userList, "success": true, "message": "User was successfully deleted"])
     }
   }
 }
