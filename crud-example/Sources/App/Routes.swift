@@ -10,6 +10,8 @@ final class Routes: RouteCollection {
   
   func build(_ builder: RouteBuilder) throws {
     
+    // GET /
+    // return view with navigation
     builder.get { req in
       return try self.view.make("base", ["success": true, "message": "Welcome to my CRUD Example! Feedback is always welcomed :)!"])
     }
@@ -68,7 +70,7 @@ final class Routes: RouteCollection {
       let userList = try User.makeQuery().all()
       
       if userList.isEmpty {
-        return try self.view.make("update", ["update": "true", "error": "There exist no user yet. Go create some!"])
+        return try self.view.make("update", ["update": "true", "error": true, "message": "There exist no user yet. Go create some!"])
       }
       
       return try self.view.make("update", ["update": "true", "userlist": userList])
