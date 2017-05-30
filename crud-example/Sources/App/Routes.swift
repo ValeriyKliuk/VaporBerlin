@@ -21,7 +21,7 @@ final class Routes: RouteCollection {
       let userList: [User] = try User.makeQuery().all()
       
       if userList.isEmpty {
-        return try self.view.make("read", ["read": "true", "error": "There exist no user yet. Go create some!"])
+        return try self.view.make("read", ["read": "true", "error": true, "message": "There exist no user yet. Go create some!"])
       }
       
       return try self.view.make("read", ["read": "true", "userlist": userList])
@@ -80,7 +80,7 @@ final class Routes: RouteCollection {
       var userList = try User.makeQuery().all()
       
       if userList.isEmpty {
-        return try self.view.make("update", ["update": "true", "error": "There exist no user yet. Go create some!"])
+        return try self.view.make("update", ["update": "true", "error": true, "message": "There exist no user yet. Go create some!"])
       }
       
       guard let id = req.data["id"]?.int else {
@@ -118,7 +118,7 @@ final class Routes: RouteCollection {
       let userList = try User.makeQuery().all()
       
       if userList.isEmpty {
-        return try self.view.make("update", ["delete": "true", "error": "There exist no user yet. Go create some!"])
+        return try self.view.make("update", ["delete": "true", "error": true, "message": "There exist no user yet. Go create some!"])
       }
       
       return try self.view.make("delete", ["delete": "true", "userlist": userList])
