@@ -34,10 +34,10 @@ $ vapor xcode -y
 Change my user `martinlasek` to yours and choose a database name
 ```JSON
 {
-  "host": "127.0.0.1",
+  "hostname": "127.0.0.1",
   "user": "martinlasek",
   "password": "",
-  "database": "wisheddatabasename",
+  "database": "crudexample",
   "port": 5432
 }
 ```
@@ -46,7 +46,7 @@ Change my user `martinlasek` to yours and choose a database name
 ##### <b>Directory:</b> <i>doesn't matter</i>
 Execute in your command line
 ```bash
-$ createdb wisheddatabasename;
+$ createdb crudexample;
 ```
 
 ## 4. Build and Run
