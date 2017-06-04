@@ -2,7 +2,7 @@
 ![From](../images/crud.gif)
 
 # Want to build it by your own?
-[Tutorial: Build CRUD from scratch.](documentation/tutorial)
+[Tutorial: Build CRUD from scratch.](documentation/tutorial.md)
 
 # Just want to set this project up?
 ## Environment
