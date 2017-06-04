@@ -93,7 +93,7 @@ extension User: NodeConvertible {
 
   func makeNode(in context: Context?) throws -> Node {
     return try Node(node: [
-      "id": id?.int,
+      "id": id ?? 0,
       "username": username,
       "firstname": firstname,
       "age": age

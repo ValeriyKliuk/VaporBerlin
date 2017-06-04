@@ -1,14 +1,17 @@
-# CRUD - Vapor and PostgreSQL
-
+# CRUD (Create, Read, Update, Delete)
 ![From](../images/crud.gif)
-## Environment
+
+## Want to learn to build it by your own?
+[Tutorial: build CRUD from scratch](documentation/tutorial)
+
+# Environment
 System Requirements | Version |  | Used Packages | Version |
 ------------ | ------------- | ------------- | ------------- | ------------- |
 macOS | Sierra |  | vapor | 2.0.x |
 swift | 3.1 |  | postgresql-provider | 2.x |
 vapor-toolbox | 2.0.3 |
 
-<center>:grey_exclamation: tested and assured to work with above versions :grey_exclamation:</center>
+<center>- TESTED AND ASSURED TO WORK WITH ABOVE VERSIONS - </center>
 
 ## 0. Install PostgreSQL via Homebrew
 ```bash
@@ -53,9 +56,9 @@ $ createdb wisheddatabasename;
 ##### <b>Application:</b> Xcode
 Make sure before you hit the ► button, that you selected <b> Run </b> Scheme to the right of the button. <br>
 <i>From this</i> <br>
-![From](../images/Build_and_Run_1.png)
+![From](../../images/Build_and_Run_1.png)
 <br> <i>To this</i> <br>
-![To](../images/Build_and_Run_2.png)
+![To](../../images/Build_and_Run_2.png)
 
 ## 5. Open in Browser
 ##### <b>Application:</b> Your favorite browser
