@@ -144,7 +144,7 @@ extension Config {
 
 ```
 
-### 8.2 Remove file PostController
+### 8.3 Remove file PostController
 #### <b>Directory:</b> myProjectName/Sources/App/Controllers/
 • Execute in your command line
 ```bash
