@@ -49,9 +49,11 @@ $ vapor xcode -y
 ##### <b>File:</b> myProjectName/Config/fluent.json
 • Change driver from "memory" to "postgresql"
 ```json
-...
-"driver": "postgresql",
-...
+{
+  ...
+  "driver": "postgresql",
+  ...
+}
 ```
 
 ## 5. Set postgresql configuration
@@ -144,7 +146,7 @@ extension Config {
 
 ```
 
-### 8.3 Remove file PostController
+### 8.3 Remove file named PostController.swift
 #### <b>Directory:</b> myProjectName/Sources/App/Controllers/
 • Execute in your command line
 ```bash
