@@ -3,7 +3,7 @@
 
 1. [CRUD (Create, Read, Update, Delete)](/crud-example)
 2. LEAF (Templating)
-3. AUTH (Authorize and Authenticate)
+3. [AUTH (Authentication and Authorization)](/auth-example)
 4. VALIDATION (Email and Username etc.)
 5. TESTING (macOS and Linux)
 6. EMAIL
