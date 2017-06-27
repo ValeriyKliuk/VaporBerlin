@@ -1,10 +1,10 @@
 # CRUD (Create, Read, Update, Delete)
 ![From](README/crud.gif)
 
-# Want to build it by your own?
+## How to build this example from scratch
 [Tutorial: Build CRUD from scratch.](documentation/tutorial.md)
 
-# Just want to set this project up?
+# How to just set this example up
 ## Environment
 System Requirements | Version |  | Used Packages | Version |
 ------------ | ------------- | ------------- | ------------- | ------------- |
