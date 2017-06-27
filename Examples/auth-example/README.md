@@ -7,7 +7,7 @@ macOS | Sierra |  | vapor | 2.1 |
 swift | 3.1 |  | postgresql-provider | 2.x |
 vapor-toolbox | 2.0.3 | | fluent-provider | 1.x |
 postgreSQL | 9.6.x | | auth-provider | 1.x |
-| | | leaf-provider | 1.x |
+| | | | leaf-provider | 1.x |
 
 <center>- TESTED AND ASSURED TO WORK WITH ABOVE VERSIONS - </center>
 
