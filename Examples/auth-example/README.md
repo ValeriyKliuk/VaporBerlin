@@ -58,10 +58,6 @@ Make sure before you hit the ► button, that you selected <b> Run </b> Scheme t
 <br> <i>To this</i> <br>
 ![To](README/Build_and_Run_2.png)
 
-## 5. Additional
-##### <b>Directory:</b> crud-example/Config
-Add the `secrets` directory to `.gitignore` if you are using git :)
-
 # How to use
 ##### <b>Application:</b> Your favorite browser
 Fire up `127.0.0.1:8002/`
