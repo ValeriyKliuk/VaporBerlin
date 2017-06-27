@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#(title)</title>
+    #embed("layout/head")
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">CRUD EXAMPLE</h1>
+      #embed("navigation")
+      <hr>
+      #embed("message")
+      #import("content")
+    </div>
+  </body>
+</html>

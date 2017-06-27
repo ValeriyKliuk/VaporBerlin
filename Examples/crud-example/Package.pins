@@ -2,18 +2,6 @@
   "autoPin": true,
   "pins": [
     {
-      "package": "Auth",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/auth.git",
-      "version": "1.0.0"
-    },
-    {
-      "package": "AuthProvider",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/auth-provider.git",
-      "version": "1.0.2"
-    },
-    {
       "package": "BCrypt",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/bcrypt.git",
@@ -86,6 +74,18 @@
       "version": "2.0.2"
     },
     {
+      "package": "Leaf",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/leaf.git",
+      "version": "2.0.1"
+    },
+    {
+      "package": "LeafProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/leaf-provider.git",
+      "version": "1.0.0"
+    },
+    {
       "package": "Multipart",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/multipart.git",
@@ -112,7 +112,7 @@
     {
       "package": "PostgreSQLProvider",
       "reason": null,
-      "repositoryURL": "https://github.com/vapor-community/postgresql-provider.git",
+      "repositoryURL": "https://github.com/vapor/postgresql-provider.git",
       "version": "2.0.0"
     },
     {
@@ -149,7 +149,7 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.1.0"
+      "version": "2.0.8"
     }
   ],
   "version": 1

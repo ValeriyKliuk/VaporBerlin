@@ -1,9 +1,9 @@
 # Get started with Vapor 2!
 ## Examples with Tutorials
 
-1. [CRUD (Create, Read, Update, Delete)](/crud-example)
+1. [CRUD (Create, Read, Update, Delete)](Examples/crud-example)
 2. LEAF (Templating)
-3. [AUTH (Authentication and Authorization)](/auth-example)
+3. [AUTH (Authentication and Authorization)](Examples/auth-example)
 4. VALIDATION (Email and Username etc.)
 5. TESTING (macOS and Linux)
 6. EMAIL

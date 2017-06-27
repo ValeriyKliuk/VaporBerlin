@@ -20,6 +20,8 @@
     "//": "crypto: Vapor's default hasher powered by OpenSSL (configure in crypto.json)",
     "//": "bcrypt: Performant BCrypt hashing implementation (configure in bcrypt.json)",
     "hash": "crypto",
+  
+    "view": "leaf",
 
     "//": "The type of cipher to use for encrypting and decrypting messages.",
     "//": "crypto: Vapor's default cipher powered by OpenSSL (configure in crypto.json)",
