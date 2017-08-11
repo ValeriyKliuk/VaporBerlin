@@ -116,12 +116,14 @@ class UserRequestTest: TestCase {
     currentUserRes.assertStatus(is: .ok)
     try currentUserRes.assertJSON("username", equals: un)
     
+    // change data
     let newUn = "Craig"
     user.username = newUn
+    
     let json = try user.makeJSON()
     let reqBody = try Body(json)
     
-    // update user
+    // update user with changed data
     let updateUserReq = Request(method: .put, uri: "/user/update/\(userId)", headers: ["Content-Type": "application/json"], body: reqBody)
     let updateUserRes = try drop.testResponse(to: updateUserReq)
     
