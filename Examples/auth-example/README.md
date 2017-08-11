@@ -7,7 +7,7 @@ macOS | Sierra |  | vapor | 2.1 |
 swift | 3.1 |  | postgresql-provider | 2.x |
 vapor-toolbox | 2.0.3 | | fluent-provider | 1.x |
 postgreSQL | 9.6.x | | auth-provider | 1.x |
-| | | leaf-provider | 1.x |
+| | | | leaf-provider | 1.x |
 
 <center>- TESTED AND ASSURED TO WORK WITH ABOVE VERSIONS - </center>
 
@@ -57,10 +57,6 @@ Make sure before you hit the ► button, that you selected <b> Run </b> Scheme t
 ![From](README/Build_and_Run_1.png)
 <br> <i>To this</i> <br>
 ![To](README/Build_and_Run_2.png)
-
-## 5. Additional
-##### <b>Directory:</b> crud-example/Config
-Add the `secrets` directory to `.gitignore` if you are using git :)
 
 # How to use
 ##### <b>Application:</b> Your favorite browser

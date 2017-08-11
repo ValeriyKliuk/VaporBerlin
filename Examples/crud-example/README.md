@@ -1,10 +1,10 @@
 # CRUD (Create, Read, Update, Delete)
 ![From](README/crud.gif)
 
-# Want to build it by your own?
+## How to build this example from scratch
 [Tutorial: Build CRUD from scratch.](documentation/tutorial.md)
 
-# Just want to set this project up?
+# How to set this example up
 ## Environment
 System Requirements | Version |  | Used Packages | Version |
 ------------ | ------------- | ------------- | ------------- | ------------- |
@@ -64,7 +64,3 @@ Make sure before you hit the ► button, that you selected <b> Run </b> Scheme t
 ## 5. Open in Browser
 ##### <b>Application:</b> Your favorite browser
 Call `127.0.0.1:8001/` or `127.0.0.1:8001/read`
-
-## 6. Additional
-##### <b>Directory:</b> crud-example/Config
-Add the `secrets` directory to `.gitignore` if you are using git :)
