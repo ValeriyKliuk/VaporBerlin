@@ -60,7 +60,7 @@ class UserRequestTest: TestCase {
     try res.assertJSON("username", equals: un)
     try res.assertJSON("age", equals: age)
     
-    /// MARK: CLEARING
+    /// MARK: CLEANUP
     guard let userId = resJson["id"]?.int, let userToDelete = try User.find(userId) else {
       
       XCTFail("Error could not convert id to int OR could not find user with id from response: \(res)")
@@ -90,7 +90,45 @@ class UserRequestTest: TestCase {
     res.assertStatus(is: .ok)
     try res.assertJSON("username", equals: un)
     
-    /// MARK: CLEARING
+    /// MARK: CLEANUP
+    try user.delete()
+  }
+  
+  func testThatUserGetsUpdated() throws {
+    
+    /// MARK: PREPARING
+    let un = "Steve", age = 37
+    let user = User(username: un, age: age)
+    try user.save()
+    
+    /// MARK: TESTING
+    guard let userId = user.id?.int else {
+    
+      XCTFail("Error converting user id to int")
+      return
+    }
+    
+    // request previous saved user
+    let currentUserReq = Request(method: .get, uri: "/user/\(userId)")
+    let currentUserRes = try drop.testResponse(to: currentUserReq)
+    
+    // test user from response is the same as previous saved user
+    currentUserRes.assertStatus(is: .ok)
+    try currentUserRes.assertJSON("username", equals: un)
+    
+    let newUn = "Craig"
+    user.username = newUn
+    let json = try user.makeJSON()
+    let reqBody = try Body(json)
+    
+    // update user
+    let updateUserReq = Request(method: .put, uri: "/user/update/\(userId)", headers: ["Content-Type": "application/json"], body: reqBody)
+    let updateUserRes = try drop.testResponse(to: updateUserReq)
+    
+    updateUserRes.assertStatus(is: .ok)
+    try updateUserRes.assertJSON("username", equals: newUn)
+    
+    /// MARK: CLEANUP
     try user.delete()
   }
   
