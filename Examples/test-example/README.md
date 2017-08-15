@@ -7,9 +7,9 @@
 ##### <b>Application:</b> Xcode
 Make sure before you hit the ► button, that you select the <b> Run </b> Scheme to the right of the button. <br>
 <i>From this</i> <br>
-![From](README/images/Build_and_Run_1.png)
+![From](README/images/Build_and_run_1.png)
 <br> <i>To this</i> <br>
-![To](README/images/Build_and_Run_2.png)
+![To](README/images/Build_and_run_2.png)
 
 ## Endpoints
 #### Create user <br/>
