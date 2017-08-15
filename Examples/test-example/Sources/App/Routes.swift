@@ -9,23 +9,28 @@ extension Droplet {
       /// http method: post
       post("user") { req in
         
-        // check username is provided
-        guard let username = req.data["username"]?.string else {
+        // check request constains json
+        guard let json = req.json else {
           
-          throw Abort(.badRequest, reason: "no username provided")
+          throw Abort(.badRequest, reason: "no json provided")
         }
         
-        // check age is provided
-        guard let age = req.data["age"]?.int else {
+        let user: User
+        
+        // try to initialize user with json
+        do {
           
-          throw Abort(.badRequest, reason: "no age provided")
+          user = try User(json: json)
+        }
+        catch {
+          
+          throw Abort(.badRequest, reason: "incorrect json")
         }
         
-        // save user with provided data
-        let user = User(username: username, age: age)
+        // save user
         try user.save()
         
-        // return
+        // return user
         return try user.makeJSON()
       }
       
@@ -39,7 +44,7 @@ extension Droplet {
         // find user with given id
         guard let user = try User.find(userId) else {
           
-          return try JSON(node: ["type":"error", "message": "user with id \(userId) could not be found."])
+          throw Abort(.badRequest, reason: "user with id \(userId) does not exist")
         }
         
         // return user as json
@@ -50,27 +55,35 @@ extension Droplet {
       /// http method: put
       put("user", Int.parameter) { req in
         
+        // get userId from url
         let userId = try req.parameters.next(Int.self)
         
+        // find user by given id
         guard let user = try User.find(userId) else {
           
           throw Abort(.badRequest, reason: "user with given id: \(userId) could not be found")
         }
         
+        // check username is provided by json
         guard let username = req.data["username"]?.string else {
          
           throw Abort(.badRequest, reason: "no username provided")
         }
         
+        // check age is provided by json
         guard let age = req.data["age"]?.int else {
           
           throw Abort(.badRequest, reason: "no age provided")
         }
         
+        // set new values to found user
         user.username = username
         user.age = age
+        
+        // save user with new values
         try user.save()
         
+        // return user as json
         return try user.makeJSON()
       }
       
@@ -84,7 +97,7 @@ extension Droplet {
         // find user with given id
         guard let user = try User.find(userId) else {
           
-          return try JSON(node: ["type": "error", "message": "user with id \(userId) does not exist"])
+          throw Abort(.badRequest, reason: "user with id \(userId) does not exist")
         }
         
         // delete user

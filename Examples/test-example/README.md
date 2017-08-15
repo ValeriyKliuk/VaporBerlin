@@ -1,23 +1,41 @@
-<p align="center">
-    <img src="https://cloud.githubusercontent.com/assets/1342803/24797159/52fb0d88-1b90-11e7-85a5-359fff0496a4.png" width="320" alt="MySQL">
-    <br>
-    <br>
-    <a href="http://beta.docs.vapor.codes/getting-started/hello-world/">
-        <img src="http://img.shields.io/badge/read_the-docs-92A8D1.svg" alt="Documentation">
-    </a>
-    <a href="http://vapor.team">
-        <img src="http://vapor.team/badge.svg" alt="Slack Team">
-    </a>
-    <a href="LICENSE">
-        <img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT License">
-    </a>
-    <a href="https://circleci.com/gh/vapor/mysql">
-        <img src="https://circleci.com/gh/vapor/mysql.svg?style=shield" alt="Continuous Integration">
-    </a>
-    <a href="https://travis-ci.org/vapor/api-template">
-    	<img src="https://travis-ci.org/vapor/api-template.svg?branch=master" alt="Build Status">
-    </a>
-    <a href="https://swift.org">
-        <img src="http://img.shields.io/badge/swift-3.1-brightgreen.svg" alt="Swift 3.1">
-    </a>
-</center>
+# 1. Setup
+[How to setup](README/setup)
+
+# 2. Use
+
+## Run
+##### <b>Application:</b> Xcode
+Make sure before you hit the ► button, that you select the <b> Run </b> Scheme to the right of the button. <br>
+<i>From this</i> <br>
+![From](README/images/Build_and_Run_1.png)
+<br> <i>To this</i> <br>
+![To](README/images/Build_and_Run_2.png)
+
+## Endpoints
+##### Create user <br/>
+method: `POST` <br/>
+route: `127.0.0.1:8003/user` <br/>
+json:
+```json
+username: "Luke Skywalker"
+age: 23
+```
+
+##### Read user
+method: `GET` <br/>
+route: `127.0.0.1:8003/user/userId` <br/>
+variable: `userId` of type `int`
+
+##### Update user
+method: `PUT` <br/>
+route: `127.0.0.1:8003/user` <br/>
+json:
+```json
+username: "Yoda"
+age: 791
+```
+
+##### Delete user
+method: `DELETE` <br/>
+route: `127.0.0.1:8003/user/userId` <br/>
+variable. `userId` of type `int`
