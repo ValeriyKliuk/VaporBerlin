@@ -1,5 +1,5 @@
 # 1. Setup
-[How to setup](README/setup)
+[How to setup](README/setup.md)
 
 # 2. Use
 
