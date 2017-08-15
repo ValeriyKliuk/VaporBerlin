@@ -6,8 +6,8 @@ extension Droplet {
     func setupRoutes() throws {
       
       /// CREATE user
-      ///
-      post("user/create") { req in
+      /// http method: post
+      post("user") { req in
         
         // check username is provided
         guard let username = req.data["username"]?.string else {
@@ -30,7 +30,7 @@ extension Droplet {
       }
       
       /// READ user by given id
-      ///
+      /// http method: get
       get("user", Int.parameter) { req in
         
         // get id from url
@@ -47,8 +47,8 @@ extension Droplet {
       }
       
       /// UPDATE user fully
-      ///
-      put("user/update", Int.parameter) { req in
+      /// http method: put
+      put("user", Int.parameter) { req in
         
         let userId = try req.parameters.next(Int.self)
         
@@ -75,8 +75,8 @@ extension Droplet {
       }
       
       /// DELETE user by id
-      ///
-      delete("user/delete", Int.parameter) { req in
+      /// http method: delete
+      delete("user", Int.parameter) { req in
         
         // get user id from url
         let userId = try req.parameters.next(Int.self)

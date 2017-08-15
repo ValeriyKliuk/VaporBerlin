@@ -43,7 +43,7 @@ class UserRequestTest: TestCase {
     let reqBody = try Body(json)
     
     /// MARK: TESTING
-    let req = Request(method: .post, uri: "/user/create", headers: ["Content-Type": "application/json"], body: reqBody)
+    let req = Request(method: .post, uri: "/user", headers: ["Content-Type": "application/json"], body: reqBody)
     let res = try drop.testResponse(to: req)
     
     // response is 200
@@ -108,21 +108,14 @@ class UserRequestTest: TestCase {
       return
     }
     
-    // request previous saved user
-    let currentUserReq = Request(method: .get, uri: "/user/\(userId)")
-    let currentUserRes = try drop.testResponse(to: currentUserReq)
-    
-    // test user from response is the same as previous saved user
-    currentUserRes.assertStatus(is: .ok)
-    try currentUserRes.assertJSON("username", equals: un)
-    
+    // set new username
     let newUn = "Craig"
     user.username = newUn
     let json = try user.makeJSON()
     let reqBody = try Body(json)
     
-    // update user
-    let updateUserReq = Request(method: .put, uri: "/user/update/\(userId)", headers: ["Content-Type": "application/json"], body: reqBody)
+    // test user gets updated
+    let updateUserReq = Request(method: .put, uri: "/user/\(userId)", headers: ["Content-Type": "application/json"], body: reqBody)
     let updateUserRes = try drop.testResponse(to: updateUserReq)
     
     updateUserRes.assertStatus(is: .ok)
@@ -145,7 +138,7 @@ class UserRequestTest: TestCase {
     }
     
     /// MARK: TESTING
-    let req = Request(method: .delete, uri: "/user/delete/\(userId)", headers: ["Content-Type":"application/json"], body: Body())
+    let req = Request(method: .delete, uri: "/user/\(userId)", headers: ["Content-Type":"application/json"], body: Body())
     let res = try drop.testResponse(to: req)
     
     res.assertStatus(is: .ok)
