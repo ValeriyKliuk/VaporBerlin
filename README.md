@@ -5,7 +5,7 @@
 2. LEAF (Templating)
 3. [AUTH (Authentication and Authorization)](Examples/auth-example)
 4. VALIDATION (Email and Username etc.)
-5. TESTING (macOS and Linux)
+5. [TESTING (macOS)](Examples/test-example)
 6. EMAIL
 7. SOCKETS (Chat)
 8. OPEN FOR SUGGESTIONS :)

@@ -108,9 +108,10 @@ class UserRequestTest: TestCase {
       return
     }
     
-    // set new username
+    // change data
     let newUn = "Craig"
     user.username = newUn
+    
     let json = try user.makeJSON()
     let reqBody = try Body(json)
     
