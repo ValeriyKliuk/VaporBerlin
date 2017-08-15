@@ -12,7 +12,7 @@ Make sure before you hit the ► button, that you select the <b> Run </b> Scheme
 ![To](README/images/Build_and_Run_2.png)
 
 ## Endpoints
-##### Create user <br/>
+#### Create user <br/>
 method: `POST` <br/>
 route: `127.0.0.1:8003/user` <br/>
 json:
@@ -21,21 +21,22 @@ username: "Luke Skywalker"
 age: 23
 ```
 
-##### Read user
+#### Read user
 method: `GET` <br/>
 route: `127.0.0.1:8003/user/userId` <br/>
 variable: `userId` of type `int`
 
-##### Update user
+#### Update user
 method: `PUT` <br/>
-route: `127.0.0.1:8003/user` <br/>
+route: `127.0.0.1:8003/user/userId` <br/>
+variable: `userId` of type `int` <br/>
 json:
 ```json
 username: "Yoda"
 age: 791
 ```
 
-##### Delete user
+#### Delete user
 method: `DELETE` <br/>
 route: `127.0.0.1:8003/user/userId` <br/>
 variable. `userId` of type `int`
