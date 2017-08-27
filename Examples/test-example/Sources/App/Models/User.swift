@@ -45,7 +45,7 @@ extension User: Preparation {
     }
   }
   
-  // deletes the table the table from the database
+  // deletes the table from the database
   static func revert(_ database: Database) throws {
     
     try database.delete(self)
