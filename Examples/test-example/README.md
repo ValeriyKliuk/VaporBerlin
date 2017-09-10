@@ -1,9 +1,12 @@
-# 1. Setup
+## Tutorial
+[How to write tests with Vapor 2](https://medium.com/@martinlasek/tutorial-how-to-write-tests-with-vapor-2-73f600d4ea8b)
+
+## Setup
 [How to setup](README/setup.md)
 
-# 2. Use
+## Use
 
-## Run
+### Run
 ##### <b>Application:</b> Xcode
 Make sure before you hit the ► button, that you select the <b> Run </b> Scheme to the right of the button. <br>
 <i>From this</i> <br>
@@ -11,7 +14,7 @@ Make sure before you hit the ► button, that you select the <b> Run </b> Scheme
 <br> <i>To this</i> <br>
 ![To](README/images/Build_and_run_2.png)
 
-## Endpoints
+### Endpoints
 #### Create user <br/>
 method: `POST` <br/>
 route: `127.0.0.1:8003/user` <br/>
