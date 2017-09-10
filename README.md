@@ -12,7 +12,7 @@
 9. MIDDLEWARE
 10. EMAIL
 11. SOCKETS (Chat)
-XX. OPEN FOR SUGGESTIONS :)
+12. OPEN FOR SUGGESTIONS :)
 
 ## Need Help?
 Join the awesome [Vapor-Community](http://vapor.team/) in Slack where everyone is just keen to help out! You can ask <i>anything</i>!
