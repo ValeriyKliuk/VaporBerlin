@@ -1,7 +1,7 @@
 # Get started with Vapor 2!
 ## Examples with Tutorials
 
-1. PURE TEMPLATE (starting point for some tutorials)
+1. [BASIC TEMPLATE (starting point for some tutorials)](Examples/basic-example)
 2. [CRUD (Create, Read, Update, Delete)](Examples/crud-example)
 3. VALIDATION (Email and Username etc.)
 4. LEAF (Templating)
