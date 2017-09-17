@@ -145,4 +145,24 @@ class UserRequestTest: TestCase {
     res.assertStatus(is: .ok)
     try res.assertJSON("type", equals: "success")
   }
+  
+  func testThatUserGetsDeleted() throws {
+    
+    /// MARK: PREPARING
+    let user = User(username: "Jony", age: 23)
+    try user.save()
+    
+    guard let userId = user.id?.int else {
+      
+      XCTFail("Error converting user id to int")
+      return
+    }
+    
+    /// MARK: TESTING
+    let req = Request(method: .delete, uri: "/user/\(userId)", headers: ["Content-Type":"application/json"], body: Body())
+    let res = try drop.testResponse(to: req)
+    
+    res.assertStatus(is: .ok)
+    try res.assertJSON("type", equals: "success")
+  }
 }
