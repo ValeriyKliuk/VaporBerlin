@@ -1,7 +1,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "basic-template",
+    name: "basic-example",
     targets: [
         Target(name: "App"),
         Target(name: "Run", dependencies: ["App"]),
