@@ -1,8 +1,8 @@
-# ! Not to be continued (moved) !
-#### I re-thought how to write tutorials and create templates and came up with <a href="https://github.com/vaporberlin/vaporschool">VaporSchool</a>!
-With VaporSchool it doesn't matter how experienced you are (aren't). Be it you just started with vapor or already implemented some apps. I want to help you to get to the next level!
+# ‼️ Discontinued / Moved to <a href="https://github.com/vaporberlin/vaporschool">VaporSchool</a> ‼️
+#### I re-thought how to write tutorials and came up with <a href="https://github.com/vaporberlin/vaporschool">VaporSchool</a>!
+With VaporSchool it doesn't matter how experienced you are. Be it you just started with Vapor or already implemented some apps. I want to help you to get to the next level!
 ________________________________________________
-Attention: old section starts from here
+⬇️ OLD SECTION ⬇️
 ________________________________________________
 ## Get started with Vapor 2!
 ### Examples with Tutorials
